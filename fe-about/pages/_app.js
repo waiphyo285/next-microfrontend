@@ -4,7 +4,6 @@ if (process.env.NODE_ENV === "development") {
 
 import dynamic from "next/dynamic";
 const page = import("@/realPages/_app");
-
 const AppPage = dynamic(() => import("@/realPages/_app"));
 
 const Page = (props) => {
