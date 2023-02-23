@@ -16,7 +16,8 @@
     "next": "13.1.6",
     "nextjs-shared": "file:../shared",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-feather": "^2.0.10"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",

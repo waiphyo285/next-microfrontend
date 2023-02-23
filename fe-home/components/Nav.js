@@ -16,7 +16,7 @@ const Navbar = ({}) => {
   const [isExpanded, toggleExpansion] = useState(false);
 
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-emerald-500 p-6">
+    <nav className="flex items-center justify-between flex-wrap bg-gradient-to-r from-violet-500 to-fuchsia-500 p-6">
       <div className="flex items-center flex-shrink-0 text-white mr-6">
         <h2>{`{ DEV }`}</h2>
       </div>
@@ -36,6 +36,7 @@ const Navbar = ({}) => {
           {MENU_LIST &&
             MENU_LIST.map((menu, menuIdx) => (
               <Menu
+                key={menuIdx}
                 data={menu}
                 className="block mt-4 lg:inline-block lg:mt-0 text-emerald-200 hover:text-white mr-4"
               />
