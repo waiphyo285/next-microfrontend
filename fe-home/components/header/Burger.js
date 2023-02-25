@@ -1,4 +1,3 @@
-import "tailwindcss/tailwind.css";
 import React from "react";
 import { Menu as MenuIcon, X as XIcon } from "react-feather";
 

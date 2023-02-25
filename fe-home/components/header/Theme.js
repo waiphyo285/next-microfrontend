@@ -1,4 +1,3 @@
-import "tailwindcss/tailwind.css";
 import React from "react";
 import { Sun as SunIcon, Moon as MoonIcon } from "react-feather";
 

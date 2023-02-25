@@ -1,5 +1,3 @@
-import "tailwindcss/tailwind.css";
-
 import App from "next/app";
 import Head from "next/head";
 import { ThemeProvider } from "next-themes";

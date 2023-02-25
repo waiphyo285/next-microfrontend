@@ -3,9 +3,11 @@ if (process.env.NODE_ENV === "development") {
 }
 
 import "@/styles/globals.css";
+import "tailwindcss/tailwind.css";
 import dynamic from "next/dynamic";
-const page = import("@/realPages/_app");
 
+// local pages
+const page = import("@/realPages/_app");
 const AppPage = dynamic(() => import("@/realPages/_app"));
 
 const Page = (props) => {

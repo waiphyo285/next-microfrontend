@@ -1,4 +1,3 @@
-import "tailwindcss/tailwind.css";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import React, { useState, useEffect } from "react";
@@ -52,12 +51,12 @@ const Navbar = ({}) => {
               theme={theme}
               systemTheme={systemTheme}
               setTheme={setTheme}
-              className="text-yellow-500 hover:text-yellow-300 mt-4 lg:mt-1 mr-2"
+              className="text-yellow-500 mr-2 mt-4 hover:text-yellow-300 lg:mt-1"
             />
             <Burger
               navbar={navbar}
               setNavbar={setNavbar}
-              className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
+              className="p-2 text-gray-500 rounded-md outline-none focus:border-gray-300 focus:border"
             />
           </div>
         </div>

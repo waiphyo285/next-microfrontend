@@ -1,8 +1,5 @@
-import "tailwindcss/tailwind.css";
 import React from "react";
 
-const BreakLine = () => (
-  <hr className="h-px border-0 bg-gray-200 dark:bg-gray-500" />
-);
+const BreakLine = () => <hr className="h-px border-1 border-violet-300" />;
 
 export default BreakLine;

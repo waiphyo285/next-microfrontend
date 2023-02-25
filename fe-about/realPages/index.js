@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
 
+// remote component
 const Home = dynamic(import("home/home"), { ssr: false });
 
 const Page = (props) => {

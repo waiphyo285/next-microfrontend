@@ -1,6 +1,7 @@
 import App from "next/app";
 import dynamic from "next/dynamic";
 
+// remote component
 const Navbar = dynamic(() => import("home/nav").catch(console.error), {
   ssr: false,
 });

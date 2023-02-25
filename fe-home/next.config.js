@@ -13,8 +13,10 @@ module.exports = {
               "about@http://localhost:3001/_next/static/chunks/remoteEntry.js",
           },
           exposes: {
-            "./nav": "./components/Nav",
             "./home": "./pages/index",
+            "./nav": "./components/Nav",
+            "./break": "./components/common/Break",
+            "./sub-title": "./components/common/SubTitle",
             "./pages-map": "./pages-map.js",
           },
           shared: {},

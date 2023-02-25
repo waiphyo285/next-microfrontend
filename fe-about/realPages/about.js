@@ -1,10 +1,8 @@
 import Head from "next/head";
-import { Inter } from "@next/font/google";
+import "tailwindcss/tailwind.css";
 
 // local components
 import AboutComponent from "@/components/About";
-
-const inter = Inter({ subsets: ["latin"] });
 
 const About = () => {
   return (

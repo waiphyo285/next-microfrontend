@@ -1,10 +1,15 @@
-import "tailwindcss/tailwind.css";
 import React from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { Linkedin, Twitter, GitHub, Link as LinkIcon } from "react-feather";
 
-// local components
-import BreakLine from "./common/Break";
+// remote component
+const BreakLine = dynamic(() => import("home/break").catch(console.error), {
+  ssr: false,
+});
+const SubTitle = dynamic(() => import("home/sub-title").catch(console.error), {
+  ssr: false,
+});
 
 const CONTACT_LIST = [
   {
@@ -39,17 +44,7 @@ const Title = () => {
   );
 };
 
-const SubTitle = () => {
-  return (
-    <h2 className="text-2xl font-extrabold mt-5">
-      <span className="bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500">
-        Software Engineer
-      </span>
-    </h2>
-  );
-};
-
-const Details = () => {
+const Details = (args) => {
   return (
     <section className="my-5 text-md lg:text-lg">
       <p className="indent-10 leading-8 antialiased my-3 hover:subpixel-antialiased">
@@ -91,9 +86,14 @@ const Summary = () => {
   return (
     <>
       <Title />
-      <SubTitle />
-      <Details />
-      <BreakLine />
+      <SubTitle
+        title="Software Engineer"
+        className="text-2xl font-extrabold mt-5"
+      />
+      <Details detailsList={[]} className="" />
+      <div className="mt-8">
+        <BreakLine />
+      </div>
       <Contact />
     </>
   );
