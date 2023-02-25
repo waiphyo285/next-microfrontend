@@ -1,11 +1,12 @@
 import "tailwindcss/tailwind.css";
+import Image from "next/image";
 import { useTheme } from "next-themes";
 import React, { useState, useEffect } from "react";
 
 // local components
-import Menu from "./Menu";
-import Theme from "./Theme";
-import Burger from "./Burger";
+import Menu from "./header/Menu";
+import Theme from "./header/Theme";
+import Burger from "./header/Burger";
 
 const MENU_LIST = [
   { href: "/", name: "Home", icon: "" },
@@ -38,9 +39,13 @@ const Navbar = ({}) => {
     <nav className="w-full bg-gradient-to-r from-violet-500 to-fuchsia-500 shadow">
       <div className="justify-between px-3 py-3 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div className="flex items-center justify-between md:block">
-          <a href="#">
-            <h2 className="text-2xl font-bold text-white">LOGO</h2>
-          </a>
+          <Image
+            width={50}
+            height={50}
+            alt="WP Logo"
+            src="/authors/logo.png"
+            className="img"
+          />
           <div className="md:hidden">
             <Theme
               mounted={mounted}

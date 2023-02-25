@@ -2,6 +2,7 @@ if (process.env.NODE_ENV === "development") {
   require("react/jsx-dev-runtime");
 }
 
+import "@/styles/globals.css";
 import dynamic from "next/dynamic";
 const page = import("@/realPages/_app");
 

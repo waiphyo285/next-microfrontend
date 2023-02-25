@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Linkedin, Twitter, GitHub, Link as LinkIcon } from "react-feather";
 
 // local components
-import BreakLine from "./Break";
+import BreakLine from "./common/Break";
 
 const CONTACT_LIST = [
   {
@@ -56,7 +56,8 @@ const Details = () => {
         I am a Backend Developer from Myanmar. I have been working for Global
         New Wave Technology in Yangon for over 3 years. And I also accept the
         occasional freelance project. I am passionate about design, development
-        and interaction. I really love what I do.
+        and interaction. Just as I wholly enjoy my job, I'm absolutely
+        enthusiastic every day.
       </p>
       <p className="indent-10 leading-8 antialiased my-3 hover:subpixel-antialiased">
         I absolutely appreciate front-end technologies like React.js and
