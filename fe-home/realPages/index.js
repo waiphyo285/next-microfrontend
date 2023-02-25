@@ -1,6 +1,5 @@
-import React, { Fragment, Suspense } from "react";
+import React, { Fragment } from "react";
 import Head from "next/head";
-import dynamic from "next/dynamic";
 
 const Home = ({ loaded }) => {
   return (

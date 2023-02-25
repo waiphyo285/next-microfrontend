@@ -8,7 +8,6 @@ const Navbar = dynamic(() => import("home/nav").catch(console.error), {
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Navbar />
       <Component {...pageProps} />
     </>
   );

@@ -5,18 +5,21 @@ const remoteVars = process.env.REMOTES || {};
 
 const remotes = Object.entries(remoteVars).reduce((acc, item) => {
   const [key, value] = item;
+
   if (typeof value !== "string") {
     acc[key] = {
       global: value,
     };
     return acc;
   }
+
   const [global, url] = value.split("@");
 
   acc[key] = {
     url,
     global,
   };
+
   return acc;
 }, {});
 
@@ -46,7 +49,8 @@ async function matchFederatedPage(path) {
     }
   }
 
-  console.log(config);
+  console.log("matchFederatedPage ", config);
+
   const matcher = createMatcher.default(config);
   return matcher(path);
 }
@@ -61,6 +65,7 @@ module.exports = {
         ...lazyProps,
         ...initialProps,
       };
+
       React.useEffect(() => {
         if (needsReload) {
           const runUnderlayingGIP = async () => {
@@ -77,6 +82,7 @@ module.exports = {
         // TODO: Render 404 page
         return React.createElement("h1", {}, "404 Not Found");
       }
+
       if (renderError) {
         // TODO: Render error page
         return React.createElement("h1", {}, "Oops, something went wrong.");
@@ -92,19 +98,21 @@ module.exports = {
     FederatedCatchAll.getInitialProps = async (ctx) => {
       // Bot marks "req, res, AppTree" as unused but those are vital to not get circular-dependency error
       const { err, req, res, AppTree, ...props } = ctx;
+
       if (err) {
         // TODO: Run getInitialProps for error page
         return { renderError: true, ...props };
       }
+
       if (!process.browser) {
         return { needsReload: true, ...props };
       }
 
-      console.log("in browser");
       const matchedPage = await matchFederatedPage(ctx.asPath);
 
       try {
-        console.log("matchedPage", matchedPage);
+        console.log("matchedPage ", matchedPage);
+
         const remote = matchedPage?.value?.remote;
         const mod = matchedPage?.value?.module;
 
@@ -113,12 +121,15 @@ module.exports = {
           return { render404: true, ...props };
         }
 
-        console.log("loading exposed module", mod, "from remote", remote);
+        console.log("Loading exposed module ", mod, "from remote ", remote);
+
         const container = await injectScript(remote);
         const FederatedPage = await container
           .get(mod)
           .then((factory) => factory().default);
-        console.log("FederatedPage", FederatedPage);
+
+        console.log("FederatedPage ", FederatedPage);
+
         if (!FederatedPage) {
           // TODO: Run getInitialProps for 404 page
           return { render404: true, ...props };
@@ -128,11 +139,13 @@ module.exports = {
           ...ctx,
           query: matchedPage.params,
         };
+
         const federatedPageProps =
           (await FederatedPage.getInitialProps?.(modifiedContext)) || {};
+
         return { ...federatedPageProps, FederatedPage };
       } catch (err) {
-        console.log("err", err);
+        console.log("renderError ", err);
         // TODO: Run getInitialProps for error page
         return { renderError: true, ...props };
       }

@@ -10,22 +10,22 @@ const CONTACT_LIST = [
   {
     link: "https://www.linkedin.com/in/wai-phyo-naing/",
     name: "Connect on Linkedin",
-    icon: <Linkedin className="mr-1" />,
+    icon: <Linkedin className="mr-2" />,
   },
   {
     link: "https://twitter.com/waiphyo285",
     name: "Follow on Twitter",
-    icon: <Twitter className="mr-1" />,
+    icon: <Twitter className="mr-2" />,
   },
   {
     link: "https://burma.social/@waiphyo285",
     name: "Follow on GitHub",
-    icon: <GitHub className="mr-1" />,
+    icon: <GitHub className="mr-2" />,
   },
   {
     link: "https://github.com/waiphyo285",
     name: "Follow on Mastodon",
-    icon: <LinkIcon className="mr-1" />,
+    icon: <LinkIcon className="mr-2" />,
   },
 ];
 
@@ -51,7 +51,7 @@ const SubTitle = () => {
 
 const Details = () => {
   return (
-    <section className="my-5 text-lg text-justify">
+    <section className="my-5 text-md lg:text-lg">
       <p className="indent-10 leading-8 antialiased my-3 hover:subpixel-antialiased">
         I am a Backend Developer from Myanmar. I have been working for Global
         New Wave Technology in Yangon for over 3 years. And I also accept the

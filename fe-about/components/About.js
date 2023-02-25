@@ -11,7 +11,7 @@ const About = () => {
       <div className="my-16 px-16">
         <Profile />
       </div>
-      <div className="my-16 px-16">
+      <div className="my-0 px-8 md:my-16 md:px-16">
         <Summary />
       </div>
     </div>

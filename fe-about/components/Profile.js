@@ -12,8 +12,8 @@ const Profile = () => {
       <Image
         src="me.png"
         alt="My profile"
-        width={500}
-        height={500}
+        width={400}
+        height={400}
         loader={imgLoader}
         className="bg-origin-border border-4 border-dashed rounded-3xl"
       />

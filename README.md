@@ -9,7 +9,7 @@ NOTE: There seems to be a problem with css-in-js sharing between federated modul
 1. run `npm install @module-federation/nextjs-mf` with npm 7 (yarn probably better) or install it directly in each folder/app
 2. run `yarn start` and browse to `http://localhost:3001`
 
-# We are available to consult
+## We are available to consult
 
 Looking for SSR over `fetch()` or architecture support and designs for module federation and Next.js?
 
@@ -19,9 +19,8 @@ Contact me <a href="mailto:zackary.l.jackson@gmail.com">zackary.l.jackson@gmail.
 
 We have three next.js applications
 
-- `checkout` - port 3000
-- `home` - port 3001
-- `shop` - port 3002
+- `fe-home` - port 3000
+- `fe-about` - port 3001
 
 The applications utilize omnidirectional routing and pages or components are able to be federated between applications like a SPA
 
@@ -67,8 +66,8 @@ Useful files in the SSR build.
 
 - https://github.com/module-federation/module-federation-examples/blob/master/server-side-rendering/website1/build/webpack.config.js/server.base.js
 - https://github.com/module-federation/module-federation-examples/blob/master/server-side-rendering/website1/build/webpack.config.js/client.base.js
-- Entrypoint - https://github.com/module-federation/module-federation-examples/blob/master/server-side-rendering/website1/server/index.js
-- Async import middleware - https://github.com/module-federation/module-federation-examples/blob/master/server-side-rendering/website1/server/server-entry.js
+- https://github.com/module-federation/module-federation-examples/blob/master/server-side-rendering/website1/server/index.js
+- https://github.com/module-federation/module-federation-examples/blob/master/server-side-rendering/website1/server/server-entry.js
 
 The async import middleware is where i keep the async boundary, this is also the only point of reference where React is import into scope.
 
