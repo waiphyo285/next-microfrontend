@@ -1,15 +1,16 @@
 import "tailwindcss/tailwind.css";
 
 import App from "next/app";
-import { DotGothic16 } from "@next/font/google";
 import { ThemeProvider } from "next-themes";
+import { DotGothic16 } from "@next/font/google";
 
 // local components
 import Navbar from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 const appFont = DotGothic16({
-  weight: "400",
+  preload: true,
+  weight: ["400"],
   subsets: ["latin"],
 });
 
