@@ -4,8 +4,8 @@ import Image from "next/image";
 import { BookOpen, Clock } from "react-feather";
 
 // local components
-import BreakLine from "../common/Break";
-import SubTitle from "../common/SubTitle";
+import BreakLine from "../shared/Break";
+import SubTitle from "../shared/SubTitle";
 
 const EDU_LIST = [
   {
@@ -44,21 +44,19 @@ const Details = (args) => {
               <div className="grow">
                 <Link
                   href={edu.portfolio || "#"}
-                  className="hover:text-violet-500"
+                  className="hover:text-purple-500"
                 >
-                  <h4 className="font-semibold text-md text-purple-500">
-                    {edu.school}
-                  </h4>
+                  <h4 className="text-md font-semibold">{edu.school}</h4>
                 </Link>
               </div>
               <div className="flex-none w-50">
-                <span className="text-sm transition duration-150 ease-in-out">
+                <span className="text-sm transition duration-150">
                   {edu.duration}
                 </span>
               </div>
             </div>
             <div className="ml-5 mb-4">
-              <div className="mt-4 mb-4 pb-2 text-md">{edu.responsibility}</div>
+              <p className="text-md mt-4 mb-4 pb-2">{edu.responsibility}</p>
               <BreakLine />
             </div>
           </li>

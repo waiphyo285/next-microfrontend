@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
-const page = import("@/realPages");
-const Page = dynamic(() => import("@/realPages"));
+const page = import("@/realPages/[...slug]");
+const Page = dynamic(() => import("@/realPages/[...slug]"));
 
 Page.getInitialProps = async (ctx) => {
   const getInitialProps = (await page).default?.getInitialProps;

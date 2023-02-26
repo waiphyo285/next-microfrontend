@@ -8,11 +8,12 @@
   ],
   "version": "0.0.0",
   "scripts": {
-    "start": "concurrently \"npm --prefix fe-home run dev\" \"npm --prefix fe-about run dev\"",
-    "build": "concurrently \"npm --prefix fe-home run build\" \"npm --prefix fe-about run build\"",
-    "serve": "concurrently \"npm --prefix fe-home run start\" \"npm --prefix fe-about run start\""
+    "start": "concurrently \"npm --prefix fe-home run dev\" \"npm --prefix fe-about run dev\" \"npm --prefix fe-blog run dev\"",
+    "build": "concurrently \"npm --prefix fe-home run build\" \"npm --prefix fe-about run build\" \"npm --prefix fe-blog run build\"",
+    "serve": "concurrently \"npm --prefix fe-home run start\" \"npm --prefix fe-about run start\" \"npm --prefix fe-blog run start\""
   },
   "dependencies": {
+    "@module-federation/nextjs-mf": "^6.1.3",
     "concurrently": "7.0.0"
   }
 }

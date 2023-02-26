@@ -13,6 +13,7 @@ module.exports = {
             home: "home@http://localhost:3000/_next/static/chunks/remoteEntry.js",
             about:
               "about@http://localhost:3001/_next/static/chunks/remoteEntry.js",
+            blog: "blog@http://localhost:3002/_next/static/chunks/remoteEntry.js",
           },
           exposes: {
             "./about": "./pages/about",

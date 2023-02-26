@@ -1,7 +1,7 @@
 import React from "react";
 
 // local components
-import BreakLine from "./common/Break";
+import BreakLine from "./shared/Break";
 import Summary from "./home/Summary";
 import Experience from "./home/Experience";
 import Education from "./home/Education";

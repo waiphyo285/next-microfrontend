@@ -9,6 +9,7 @@ import Burger from "./header/Burger";
 
 const MENU_LIST = [
   { href: "/", name: "Home", icon: "" },
+  { href: "/blog", name: "Blog", icon: "" },
   { href: "/about", name: "About", icon: "" },
 ];
 
@@ -35,7 +36,7 @@ const Navbar = ({}) => {
   }, []);
 
   return (
-    <nav className="w-full bg-gradient-to-r from-violet-500 to-fuchsia-500 shadow">
+    <nav className="w-full bg-gradient-to-r from-violet-500 to-purple-500 shadow">
       <div className="justify-between px-3 py-3 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div className="flex items-center justify-between md:block">
           <Image
@@ -51,12 +52,12 @@ const Navbar = ({}) => {
               theme={theme}
               systemTheme={systemTheme}
               setTheme={setTheme}
-              className="text-yellow-500 mr-2 mt-4 hover:text-yellow-300 lg:mt-1"
+              className="text-yellow-100 mr-2 mt-4 hover:text-yellow-500 lg:mt-1"
             />
             <Burger
               navbar={navbar}
               setNavbar={setNavbar}
-              className="p-2 text-gray-500 rounded-md outline-none focus:border-gray-300 focus:border"
+              className="p-2 text-yellow-100 rounded-md outline-none"
             />
           </div>
         </div>
@@ -75,7 +76,7 @@ const Navbar = ({}) => {
             theme={theme}
             systemTheme={systemTheme}
             setTheme={setTheme}
-            className="text-yellow-500 hover:text-yellow-300 mt-4 lg:mt-1"
+            className="text-yellow-100 hover:text-yellow-500 mt-4 lg:mt-1"
           />
         </div>
       </div>

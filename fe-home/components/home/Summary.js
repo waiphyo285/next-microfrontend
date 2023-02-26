@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 // local components
-import SubTitle from "../common/SubTitle";
+import SubTitle from "../shared/SubTitle";
 
 const Greeting = ({ title, params }) => {
   return (
@@ -30,7 +30,7 @@ const Summary = () => {
           height={150}
           alt="My profile"
           src="/authors/me1x1.jpg"
-          className="self-center flex-shrink-0 rounded-full border-4 border-violet-500 md:justify-self-start"
+          className="self-center flex-shrink-0 rounded-full border-4 border-violet-300 md:justify-self-start"
         />
         <Greeting title="" params="" />
       </div>

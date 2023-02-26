@@ -1,6 +1,7 @@
 import App from "next/app";
 import Head from "next/head";
 import { ThemeProvider } from "next-themes";
+import "tailwindcss/tailwind.css";
 
 // local components
 import Navbar from "@/components/Nav";
@@ -16,7 +17,7 @@ function MyApp({ Component, pageProps }) {
         </style>
       </Head>
       <ThemeProvider>
-        <div>
+        <div className="scrollbar-thin scrollbar-thumb-blue-700 scrollbar-track-blue-300">
           <header className="">
             <Navbar />
           </header>
