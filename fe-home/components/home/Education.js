@@ -1,5 +1,7 @@
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
+import { BookOpen, Clock } from "react-feather";
 
 // local components
 import BreakLine from "../common/Break";
@@ -10,6 +12,15 @@ const EDU_LIST = [
     school: "University of Computer Studies, Meiktila",
     duration: "Dec 2014 - Aug 2019",
     majority: "Computer Science, B.C.Sc",
+    portfolio: "http://ucsmtla.edu.mm/",
+    responsibility: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua`,
+  },
+  {
+    school: "No. Basic Education High School, Myingyan",
+    duration: "Jun 2011 - Mar 2014",
+    majority: "G9, G10, G11 Eduction",
+    portfolio: "#",
     responsibility: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua`,
   },
@@ -24,15 +35,29 @@ const Details = (args) => {
         detailsList.map((edu, expIdx) => (
           <li key={expIdx}>
             <div className="flex-start flex items-center">
-              <span className="-ml-[5px] h-[9px] w-[9px] rounded-full bg-violet-300"></span>
+              <i className="-ml-[5px] h-[9px] w-[9px] rounded-full bg-violet-300" />
               <h4 className="ml-4 text-xl font-semibold text-lg text-violet-500">
-                {edu.majority}, {edu.school}
+                {edu.majority}
               </h4>
             </div>
+            <div className="flex ml-5 mt-3">
+              <div className="grow">
+                <Link
+                  href={edu.portfolio || "#"}
+                  className="hover:text-violet-500"
+                >
+                  <h4 className="font-semibold text-md text-purple-500">
+                    {edu.school}
+                  </h4>
+                </Link>
+              </div>
+              <div className="flex-none w-50">
+                <span className="text-sm transition duration-150 ease-in-out">
+                  {edu.duration}
+                </span>
+              </div>
+            </div>
             <div className="ml-5 mb-4">
-              <span className="text-sm transition duration-150 ease-in-out">
-                {edu.duration}
-              </span>
               <div className="mt-4 mb-4 pb-2 text-md">{edu.responsibility}</div>
               <BreakLine />
             </div>
@@ -57,8 +82,9 @@ const Education = () => {
       <div className="grid grid-flow-row gap-4 md:grid-flow-col">
         <div className="my-8 px-8 md:px-16">
           <SubTitle
+            icon={<BookOpen />}
             title="Educations"
-            className="text-2xl font-extrabold mb-4"
+            className="inline-flex text-2xl font-extrabold mb-4"
           />
           <Details
             detailsList={EDU_LIST}

@@ -15,7 +15,7 @@ const Profile = () => {
         alt="My profile"
         loader={imgLoader}
         src="/authors/logo.png"
-        className="border-4 border-dashed rounded-lg"
+        className="my-12 border-4 border-violet-500 rounded-lg"
       />
     </div>
   );

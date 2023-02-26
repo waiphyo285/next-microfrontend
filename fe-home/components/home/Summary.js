@@ -30,7 +30,7 @@ const Summary = () => {
           height={150}
           alt="My profile"
           src="/authors/me1x1.jpg"
-          className="self-center flex-shrink-0 rounded-full border-4 md:justify-self-start"
+          className="self-center flex-shrink-0 rounded-full border-4 border-violet-500 md:justify-self-start"
         />
         <Greeting title="" params="" />
       </div>

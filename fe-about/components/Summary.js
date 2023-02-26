@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { Linkedin, Twitter, GitHub, Link as LinkIcon } from "react-feather";
+import { User, Linkedin, Twitter, GitHub, Link2 } from "react-feather";
 
 // remote component
 const BreakLine = dynamic(() => import("home/break").catch(console.error), {
@@ -30,7 +30,24 @@ const CONTACT_LIST = [
   {
     link: "https://github.com/waiphyo285",
     name: "Follow on Mastodon",
-    icon: <LinkIcon className="mr-2" />,
+    icon: <Link2 className="mr-2" />,
+  },
+];
+
+const PARAM_LIST = [
+  {
+    text: `I am a Backend Developer from Myanmar. I have been working for Global
+    New Wave Technology in Yangon for over 3 years. And I also accept the
+    occasional freelance project. I am passionate about design, development
+    and interaction. Just as I wholly enjoy my job, I'm absolutely
+    enthusiastic every day.`,
+  },
+  {
+    text: `I absolutely appreciate front-end technologies like React.js and
+    back-end technologies like Node.js, despite the fact that I work in a
+    backend position. So I can say with certainty that I'm still jogging. In
+    the future, I'd like to work as a Full Stack Developer with a passion
+    for product development.`,
   },
 ];
 
@@ -45,22 +62,20 @@ const Title = () => {
 };
 
 const Details = (args) => {
+  const { detailsList, ...rest } = args;
   return (
-    <section className="my-5 text-md lg:text-lg">
-      <p className="indent-10 leading-8 antialiased my-3 hover:subpixel-antialiased">
-        I am a Backend Developer from Myanmar. I have been working for Global
-        New Wave Technology in Yangon for over 3 years. And I also accept the
-        occasional freelance project. I am passionate about design, development
-        and interaction. Just as I wholly enjoy my job, I'm absolutely
-        enthusiastic every day.
-      </p>
-      <p className="indent-10 leading-8 antialiased my-3 hover:subpixel-antialiased">
-        I absolutely appreciate front-end technologies like React.js and
-        back-end technologies like Node.js, despite the fact that I work in a
-        backend position. So I can say with certainty that I'm still jogging. In
-        the future, I'd like to work as a Full Stack Developer with a passion
-        for product development.
-      </p>
+    <section {...rest}>
+      {detailsList &&
+        detailsList.map((detail, detailIdx) => {
+          return (
+            <p
+              key={detailIdx}
+              className="indent-10 leading-8 antialiased my-3 hover:subpixel-antialiased"
+            >
+              {detail.text}
+            </p>
+          );
+        })}
     </section>
   );
 };
@@ -87,10 +102,15 @@ const Summary = () => {
     <>
       <Title />
       <SubTitle
+        icon={<User />}
         title="Software Engineer"
-        className="text-2xl font-extrabold mt-5"
+        className="inline-flex text-2xl font-extrabold mt-5"
       />
-      <Details detailsList={[]} className="" />
+      <Details
+        title=""
+        detailsList={PARAM_LIST}
+        className="my-5 text-md lg:text-lg"
+      />
       <div className="mt-8">
         <BreakLine />
       </div>
