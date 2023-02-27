@@ -18,7 +18,7 @@ const Tags = (args) => {
             data-te-chip-init
             data-te-ripple-init
             data-te-close="true"
-            className="[word-wrap: break-word] flex items-center justify-between cursor-pointer rounded-[16px] my-[5px] px-[12px] text-black bg-yellow-300"
+            className="[word-wrap: break-word] flex items-center justify-between cursor-pointer rounded-[16px] my-[5px] px-[12px] text-black bg-gray-300"
           >
             {tag}
           </span>

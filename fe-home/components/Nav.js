@@ -13,14 +13,21 @@ const MENU_LIST = [
   { href: "/about", name: "About", icon: "" },
 ];
 
-const NavMenu = ({ menuList }) => {
+const NavMenu = ({ setNavbar, menuList }) => {
+  const [isActive, setIsActive] = useState(0);
   return (
     menuList &&
     menuList.map((menu, menuIdx) => (
       <Menu
         key={menuIdx}
         data={menu}
-        className="block py-2 lg:py-0 lg:inline-block text-white hover:text-yellow-300"
+        onClick={(ev) => {
+          setNavbar(false);
+          setIsActive(menuIdx);
+        }}
+        className={`block py-2 lg:py-0 lg:inline-block text-white hover:text-yellow-300 ${
+          isActive === menuIdx && "text-yellow-300"
+        }`}
       />
     ))
   );
@@ -52,7 +59,7 @@ const Navbar = ({}) => {
               theme={theme}
               systemTheme={systemTheme}
               setTheme={setTheme}
-              className="text-yellow-100 mr-2 mt-4 hover:text-yellow-500 lg:mt-1"
+              className="text-yellow-100 mr-2 mt-4 hover:text-yellow-300 lg:mt-1"
             />
             <Burger
               navbar={navbar}
@@ -67,7 +74,11 @@ const Navbar = ({}) => {
           }`}
         >
           <ul className="items-center justify-center md:flex md:space-x-6 md:space-y-0">
-            <NavMenu menuList={MENU_LIST} />
+            <NavMenu
+              navbar={navbar}
+              setNavbar={setNavbar}
+              menuList={MENU_LIST}
+            />
           </ul>
         </div>
         <div className="hidden space-x-2 md:inline-block">
@@ -76,7 +87,7 @@ const Navbar = ({}) => {
             theme={theme}
             systemTheme={systemTheme}
             setTheme={setTheme}
-            className="text-yellow-100 hover:text-yellow-500 mt-4 lg:mt-1"
+            className="text-yellow-100 hover:text-yellow-300 mt-4 lg:mt-1"
           />
         </div>
       </div>
