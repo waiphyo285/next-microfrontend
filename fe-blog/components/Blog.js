@@ -7,6 +7,57 @@ const SubTitle = dynamic(() => import("home/sub-title").catch(console.error), {
   ssr: false,
 });
 
+const Tags = (args) => {
+  const { tagsList, ...rest } = args;
+  return (
+    <div {...rest}>
+      {tagsList &&
+        tagsList.map((tag, tagIdx) => (
+          <span
+            key={tagIdx}
+            data-te-chip-init
+            data-te-ripple-init
+            data-te-close="true"
+            className="[word-wrap: break-word] flex items-center justify-between cursor-pointer rounded-[16px] my-[5px] px-[12px] text-black bg-yellow-300"
+          >
+            {tag}
+          </span>
+        ))}
+    </div>
+  );
+};
+
+const Card = (args) => {
+  const { details, ...rest } = args;
+  return (
+    <Link href="#" {...rest}>
+      <div className="relative pb-48 overflow-hidden">
+        <img
+          alt=""
+          className="h-full w-full absolute inset-0 object-cover"
+          src="https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+        />
+      </div>
+      <div className="p-8">
+        <Tags
+          tagsList={["C++", "Java", "C#", "PHP"]}
+          className="flex w-full flex-wrap justify-center text-sm"
+        />
+        <SubTitle
+          icon=""
+          title="How to learn not to be noob"
+          className="text-lg font-extrabold my-2"
+        />
+        <div className="mt-3 flex items-center gap-2">
+          <span className="text-sm font-semibold">by</span>
+          <span className="text-md font-semibold">Admin</span>
+          <span className="text-sm font-semibold">- Feb 28, 2023</span>
+        </div>
+      </div>
+    </Link>
+  );
+};
+
 const Blog = () => {
   return (
     <div className="grid grid-flow-row gap-4 md:grid-flow-col">
@@ -21,49 +72,11 @@ const Blog = () => {
       </div>
       <div className="grid grid-flow-row gap-8 px-8 my-16 md:grid-cols-3">
         {[1, 2, 3, 4, 5, 6, 7, 8].map((blog, blogIdx) => (
-          <div key={blogIdx} className="">
-            <Link
-              href="#"
-              className="block shadow-md rounded-md overflow-hidden border-4 border-violet-300"
-            >
-              <div className="relative pb-48 overflow-hidden">
-                <img
-                  alt=""
-                  className="h-full w-full absolute inset-0 object-cover"
-                  src="https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-                />
-              </div>
-              <div className="p-8">
-                <div className="flex w-full flex-wrap justify-center text-sm">
-                  <span
-                    data-te-chip-init
-                    data-te-ripple-init
-                    data-te-close="true"
-                    className="[word-wrap: break-word] flex items-center justify-between cursor-pointer rounded-[16px] my-[5px] px-[12px] leading-loose bg-purple-500"
-                  >
-                    C#
-                  </span>
-                  <span
-                    data-te-chip-init
-                    data-te-ripple-init
-                    data-te-close="true"
-                    className="[word-wrap: break-word] flex items-center justify-between cursor-pointer rounded-[16px] my-[5px] px-[12px] leading-loose bg-purple-500"
-                  >
-                    Java
-                  </span>
-                </div>
-                <SubTitle
-                  icon=""
-                  title="How to learn not to be noob"
-                  className="text-2xl font-extrabold my-2"
-                />
-                <div className="mt-3 flex items-center gap-1">
-                  <span className="text-sm font-semibold">by</span>
-                  <span className="text-md font-semibold">Admin</span>
-                </div>
-              </div>
-            </Link>
-          </div>
+          <Card
+            key={blogIdx}
+            details={blog}
+            className="block shadow-md rounded-md overflow-hidden border-4 border-violet-300"
+          />
         ))}
       </div>
     </div>
