@@ -1,7 +1,9 @@
 import React from "react";
-import Link from "next/link";
 import dynamic from "next/dynamic";
-import { User, Linkedin, Twitter, GitHub, Link2 } from "react-feather";
+import { User } from "react-feather";
+
+// local components
+import Contact from "./Contact";
 
 // remote components
 const Title = dynamic(() => import("home/title").catch(console.error), {
@@ -31,29 +33,6 @@ const PARAM_LIST = [
   },
 ];
 
-const CONTACT_LIST = [
-  {
-    link: "https://www.linkedin.com/in/wai-phyo-naing/",
-    name: "Connect on Linkedin",
-    icon: <Linkedin className="mr-2" />,
-  },
-  {
-    link: "https://twitter.com/waiphyo285",
-    name: "Follow on Twitter",
-    icon: <Twitter className="mr-2" />,
-  },
-  {
-    link: "https://burma.social/@waiphyo285",
-    name: "Follow on GitHub",
-    icon: <GitHub className="mr-2" />,
-  },
-  {
-    link: "https://github.com/waiphyo285",
-    name: "Follow on Mastodon",
-    icon: <Link2 className="mr-2" />,
-  },
-];
-
 const Details = (args) => {
   const { detailsList, ...rest } = args;
   return (
@@ -69,24 +48,6 @@ const Details = (args) => {
             </p>
           );
         })}
-    </section>
-  );
-};
-
-const Contact = (args) => {
-  const { contactList, ...rest } = args;
-  return (
-    <section {...rest}>
-      {contactList &&
-        contactList.map((contact, contactIdx) => (
-          <Link
-            key={contactIdx}
-            href={contact.link}
-            className="inline-flex justify-center items-center align-middle m-2"
-          >
-            {contact.icon} {contact.name}
-          </Link>
-        ))}
     </section>
   );
 };
@@ -109,14 +70,10 @@ const Summary = () => {
         detailsList={PARAM_LIST}
         className="my-5 text-md lg:text-lg"
       />
-      <div className="mt-8">
+      <Contact title="Contacts" className="my-5 text-md lg:text-lg" />
+      <div className="my-8">
         <BreakLine />
       </div>
-      <Contact
-        title="Contacts"
-        contactList={CONTACT_LIST}
-        className="my-5 text-md lg:text-lg"
-      />
     </>
   );
 };
