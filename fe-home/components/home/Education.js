@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { BookOpen, Clock } from "react-feather";
+import { BookOpen } from "react-feather";
 
 // local components
 import BreakLine from "../shared/Break";

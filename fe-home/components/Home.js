@@ -3,19 +3,20 @@ import React from "react";
 // local components
 import BreakLine from "./shared/Break";
 import Summary from "./home/Summary";
-import Experience from "./home/Experience";
 import Education from "./home/Education";
+import Experience from "./home/Experience";
+import Repository from "./home/Repository";
 
-const Home = () => {
+const Home = ({ repositoryList }) => {
   return (
-    <div className="grid grid-flow-row gap-4">
-      <Summary />
-      <div className="-mt-5">
-        <BreakLine />
+    <>
+      <div className="grid grid-flow-row gap-4">
+        <Summary />
+        <Experience />
+        <Education />
       </div>
-      <Experience />
-      <Education />
-    </div>
+      <Repository repositoryList={repositoryList} />
+    </>
   );
 };
 

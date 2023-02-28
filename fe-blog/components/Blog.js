@@ -70,7 +70,7 @@ const Blog = () => {
           src="/information/publish_article.svg"
         />
       </div>
-      <div className="grid grid-flow-row gap-8 px-8 my-16 md:grid-cols-3">
+      <div className="grid grid-flow-row gap-8 px-8 my-16 md:grid-cols-1 lg:grid-cols-3">
         {[1, 2, 3, 4, 5, 6, 7, 8].map((blog, blogIdx) => (
           <Card
             key={blogIdx}

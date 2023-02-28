@@ -10,8 +10,8 @@ const Profile = () => {
   return (
     <div className="bg-center rotate-6">
       <Image
-        width={300}
-        height={300}
+        width={280}
+        height={280}
         alt="My profile"
         loader={imgLoader}
         src="/authors/logo.png"
