@@ -26,7 +26,7 @@ const Home = ({ props }) => {
 };
 
 Home.getInitialProps = async (ctx) => {
-  const GITHUB_ACCESS_TOKEN = "";
+  const GITHUB_ACCESS_TOKEN = ``;
 
   const httpLink = createHttpLink({
     uri: "https://api.github.com/graphql",
@@ -55,10 +55,10 @@ Home.getInitialProps = async (ctx) => {
             edges {
               node {
                 ... on Repository {
-                  name
-                  description
                   id
                   url
+                  name
+                  description
                   stargazers {
                     totalCount
                   }
